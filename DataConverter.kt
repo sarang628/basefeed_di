@@ -1,8 +1,8 @@
 package com.sarang.torang.di.basefeed_di
 
 import com.sarang.torang.BuildConfig
+import com.sarang.torang.core.database.model.feed.ReviewAndImageEntity
 import com.sarang.torang.data.basefeed.FeedItemUiState
-import com.sarang.torang.data.entity.ReviewAndImageEntity
 
 fun ReviewAndImageEntity.toReview(): FeedItemUiState {
     return FeedItemUiState(
