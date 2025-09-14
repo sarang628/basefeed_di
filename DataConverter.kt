@@ -17,6 +17,7 @@ fun ReviewAndImageEntity.toReview(): FeedItemUiState {
         isLike = this.like != null,
         isFavorite = this.favorite != null,
         contents = this.review.contents,
+        height = if(images.isEmpty()) 400 else this.images[0].height,
         createDate = this.review.createDate
     )
 }
