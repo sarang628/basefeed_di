@@ -1,5 +1,9 @@
 package com.sarang.torang.di.basefeed_di
 
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.sarang.torang.BuildConfig
 import com.sarang.torang.core.database.model.feed.ReviewAndImageEntity
 import com.sarang.torang.data.basefeed.FeedItemUiState
