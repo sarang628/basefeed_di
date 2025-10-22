@@ -2,15 +2,18 @@ package com.sarang.torang.di.basefeed_di
 
 import com.example.pinchzoom.submodule.pinchzoom.PinchZoomImageData
 import com.sarang.torang.compose.feed.internal.components.FeedImageLoader
+import com.sarang.torang.compose.feed.internal.components.FeedImageLoaderData
 import com.sarang.torang.di.pinchzoom.PinchZoomState
+import com.sarang.torang.di.pinchzoom.d
 import com.sarang.torang.di.pinchzoom.pinchZoomImageLoader
 
 fun CustomFeedImageLoader(
-    zoomState: PinchZoomState?,
-    onZoomState : (PinchZoomState?)->Unit  ={},
-    showLog     : Boolean = false,
-): FeedImageLoader = { data ->
-
+    tag         : String                    = "__CustomFeedImageLoader",
+    zoomState   : PinchZoomState?           = null,
+    onZoomState : (PinchZoomState?)->Unit   = {},
+    showLog     : Boolean                   = false,
+): FeedImageLoader = { data : FeedImageLoaderData ->
+    showLog.d("__CustomFeedImageLoader", "loading data height: ${data.height}")
     pinchZoomImageLoader(
         zoomState = zoomState,
         showLog = showLog,
