@@ -1,5 +1,6 @@
 package com.sarang.torang.di.basefeed_di
 
+import androidx.compose.ui.unit.dp
 import com.example.pinchzoom.submodule.pinchzoom.PinchZoomImageData
 import com.sarang.torang.compose.feed.internal.components.FeedImageLoader
 import com.sarang.torang.compose.feed.internal.components.FeedImageLoaderData
@@ -13,7 +14,9 @@ fun CustomFeedImageLoader(
     onZoomState : (PinchZoomState?)->Unit   = {},
     showLog     : Boolean                   = false,
 ): FeedImageLoader = { data : FeedImageLoaderData ->
-    showLog.d("__CustomFeedImageLoader", "loading data height: ${data.height}")
+    if(data.height != 50.dp) // except profile image
+        showLog.d(tag, "loading data height: ${data.height}")
+
     pinchZoomImageLoader(
         zoomState = zoomState,
         showLog = showLog,
@@ -27,15 +30,4 @@ fun CustomFeedImageLoader(
             height = data.height
         )
     )
-
-    /*provideZoomableTorangAsyncImage().invoke(
-        ImageLoadData(
-            modifier = data.modifier,
-            url = data.url,
-            progressSize = data.progressSize,
-            errorIconSize = data.errorIconSize,
-            contentScale = data.contentScale,
-            height = data.height
-        )
-    )*/
 }
