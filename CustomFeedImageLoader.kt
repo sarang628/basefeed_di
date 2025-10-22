@@ -1,10 +1,7 @@
 package com.sarang.torang.di.basefeed_di
 
-import com.example.pinchzoom.library.pinchzoom.rememberPinchZoomState
-import com.example.pinchzoom.submodule.pinchzoom.PunchZoomImageData
+import com.example.pinchzoom.submodule.pinchzoom.PinchZoomImageData
 import com.sarang.torang.compose.feed.internal.components.FeedImageLoader
-import com.sarang.torang.di.image.ImageLoadData
-import com.sarang.torang.di.image.provideZoomableTorangAsyncImage
 import com.sarang.torang.di.pinchzoom.PinchZoomState
 import com.sarang.torang.di.pinchzoom.pinchZoomImageLoader
 
@@ -17,13 +14,14 @@ fun CustomFeedImageLoader(
     pinchZoomImageLoader(
         zoomState = zoomState,
         showLog = showLog,
-        onZoomState = onZoomState
+        onZoomState = { onZoomState.invoke(it?.copy(originHeight = data.height)) }
     ).invoke(
-        PunchZoomImageData(
+        PinchZoomImageData(
             modifier = data.modifier,
             model = data.url ?: "",
             contentScale = data.contentScale,
-            contentDescription = null
+            contentDescription = null,
+            height = data.height
         )
     )
 
