@@ -14,9 +14,6 @@ fun CustomFeedImageLoader(
     onZoomState : (PinchZoomState?)->Unit   = {},
     showLog     : Boolean                   = false,
 ): FeedImageLoader = { data : FeedImageLoaderData ->
-    if(data.height != 50.dp) // except profile image
-        showLog.d(tag, "loading data height: ${data.height}")
-
     pinchZoomImageLoader(
         zoomState = zoomState,
         showLog = showLog,
