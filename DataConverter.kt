@@ -2,9 +2,10 @@ package com.sarang.torang.di.basefeed_di
 
 import com.sarang.torang.BuildConfig
 import com.sarang.torang.core.database.model.feed.ReviewAndImageEntity
+import com.sarang.torang.data.ReviewAndImage
 import com.sarang.torang.data.basefeed.FeedItemUiState
 
-fun ReviewAndImageEntity.toReview(): FeedItemUiState {
+fun ReviewAndImage.toReview(): FeedItemUiState {
     return FeedItemUiState(
         reviewImages        = this.images.map { BuildConfig.REVIEW_IMAGE_SERVER_URL + it.pictureUrl },
         userName            = this.review.userName ?: "",
