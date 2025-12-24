@@ -1,11 +1,9 @@
 package com.sarang.torang.di.basefeed_di
 
-import androidx.compose.ui.unit.dp
 import com.example.pinchzoom.submodule.pinchzoom.PinchZoomImageData
-import com.sarang.torang.compose.feed.internal.components.FeedImageLoader
-import com.sarang.torang.compose.feed.internal.components.FeedImageLoaderData
+import com.sarang.torang.compose.feed.internal.components.type.FeedImageLoader
+import com.sarang.torang.compose.feed.internal.components.type.FeedImageLoaderData
 import com.sarang.torang.di.pinchzoom.PinchZoomState
-import com.sarang.torang.di.pinchzoom.d
 import com.sarang.torang.di.pinchzoom.pinchZoomImageLoader
 
 fun CustomFeedImageLoader(
