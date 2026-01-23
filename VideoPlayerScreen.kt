@@ -13,17 +13,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.ProcessLifecycleOwner
+import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
-import androidx.core.net.toUri
 
 @OptIn(UnstableApi::class)
 @Composable
@@ -85,7 +81,7 @@ fun VideoPlayerScreen(
     }
 
     // 앱이 백그라운드로 갈 때 ExoPlayer를 정지합니다.
-    ProcessLifecycleOwner.get().lifecycle.addObserver(object : LifecycleObserver {
+    /*ProcessLifecycleOwner.get().lifecycle.addObserver(object : LifecycleObserver {
         @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
         fun onBackground() {
             exoPlayer.playWhenReady = false
@@ -95,5 +91,5 @@ fun VideoPlayerScreen(
         fun onForeground() {
             exoPlayer.playWhenReady = isPlaying
         }
-    })
+    })*/
 }
