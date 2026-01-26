@@ -3,8 +3,9 @@ package com.sarang.torang.di.basefeed_di
 import com.sarang.torang.VideoPlayer
 import com.sarang.torang.compose.feed.internal.components.type.VideoPlayerType
 
-val CustomVideoPlayerType: VideoPlayerType = {
+fun CustomVideoPlayerType(onClick : () -> Unit = {}): VideoPlayerType = {
     //VideoPlayerScreen(videoUrl = it, isPlaying = true, onClick = {}, onPlay = {})
     VideoPlayer(videoUrl        = it.url,
-                playWhenReady   = it.isPlaying)
+                playWhenReady   = it.isPlaying,
+                onClick         = onClick)
 }
