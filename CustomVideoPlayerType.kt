@@ -28,9 +28,5 @@ fun CustomVideoPlayerType(onClick   : () -> Unit = {},
                                       onClick = onClick,
                                       onPlayed = onPlayed
                                   )
-                                  VideoPlayer(videoUrl        = it.url,
-                                      playWhenReady   = it.isPlaying,
-                                      onClick         = onClick,
-                                      onPlayed        = onPlayed)
                               }
 }
