@@ -3,12 +3,10 @@ package com.sarang.torang.di.basefeed_di
 import TorangAsyncImage
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.ui.Modifier
 import com.sarang.torang.LocalThumbImageLoader
 import com.sarang.torang.ShortItem
 import com.sarang.torang.ShortVideo
-import com.sarang.torang.VideoPlayer
-import com.sarang.torang.compose.feed.internal.components.type.VideoPlayerType
+import com.sarang.torang.compose.component.type.VideoPlayerType
 
 fun CustomVideoPlayerType(onClick   : () -> Unit = {},
                           onPlayed  : () -> Unit = {}): VideoPlayerType = {

@@ -1,8 +1,8 @@
 package com.sarang.torang.di.basefeed_di
 
 import com.example.pinchzoom.submodule.pinchzoom.PinchZoomImageData
-import com.sarang.torang.compose.feed.internal.components.type.FeedImageLoader
-import com.sarang.torang.compose.feed.internal.components.type.FeedImageLoaderData
+import com.sarang.torang.compose.component.type.FeedImageLoader
+import com.sarang.torang.compose.component.type.FeedImageLoaderData
 import com.sarang.torang.di.pinchzoom.PinchZoomState
 import com.sarang.torang.di.pinchzoom.pinchZoomImageLoader
 
