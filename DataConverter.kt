@@ -1,10 +1,10 @@
 package com.sarang.torang.di.basefeed_di
 
 import com.sarang.torang.BuildConfig
-import com.sarang.torang.compose.feed.FeedBottomUiState
-import com.sarang.torang.compose.feed.FeedTopUiState
+import com.sarang.torang.compose.feed.internal.components.FeedBottomUiState
+import com.sarang.torang.compose.feed.internal.components.FeedTopUiState
 import com.sarang.torang.data.ReviewAndImage
-import com.sarang.torang.compose.feed.FeedItemUiState
+import com.sarang.torang.data.basefeed.FeedItemUiState
 
 fun ReviewAndImage.toReview(): FeedItemUiState {
     return FeedItemUiState(
@@ -16,9 +16,9 @@ fun ReviewAndImage.toReview(): FeedItemUiState {
         commentAmount       = this.review.commentAmount ?: 0,
         comments            = listOf(),
         feedBottomUiState = FeedBottomUiState(
-            likeAmount          = this.review.likeAmount ?: 0,
-            isLike              = this.like != null,
-            isFavorite          = this.favorite != null,
+            likeAmount = this.review.likeAmount ?: 0,
+            isLike = this.like != null,
+            isFavorite = this.favorite != null,
         ),
         contents            = this.review.contents ?: "",
         height              = if(images.isEmpty()) 300 else this.images[0].height ?: 0,

@@ -1,6 +1,6 @@
 package com.sarang.torang.di.basefeed_di
 
-import com.sarang.torang.compose.component.type.ExpandableTextType
+import com.sarang.torang.compose.feed.internal.components.type.ExpandableTextType
 import com.sryang.library.ExpandableText
 
 val CustomExpandableTextType: ExpandableTextType = {
