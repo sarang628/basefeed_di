@@ -1,10 +1,10 @@
 package com.sarang.torang.di.basefeed_di
 
 import com.sarang.torang.BuildConfig
-import com.sarang.torang.compose.feed.internal.components.FeedBottomUiState
-import com.sarang.torang.compose.feed.internal.components.FeedTopUiState
+import com.sarang.torang.compose.feed.FeedBottomUiState
+import com.sarang.torang.compose.feed.FeedItemUiState
+import com.sarang.torang.compose.feed.FeedTopUiState
 import com.sarang.torang.data.ReviewAndImage
-import com.sarang.torang.data.basefeed.FeedItemUiState
 
 fun ReviewAndImage.toReview(): FeedItemUiState {
     return FeedItemUiState(
