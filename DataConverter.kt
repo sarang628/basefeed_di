@@ -1,18 +1,20 @@
 package com.sarang.torang.di.basefeed_di
 
 import com.sarang.torang.BuildConfig
-import com.sarang.torang.compose.feed.FeedBottomUiState
-import com.sarang.torang.compose.feed.FeedItemUiState
-import com.sarang.torang.compose.feed.FeedTopUiState
+import com.sarang.torang.compose.feed.internal.components.FeedBottomUiState
+import com.sarang.torang.compose.feed.internal.components.FeedTopUiState
 import com.sarang.torang.data.ReviewAndImage
+import com.sarang.torang.data.basefeed.FeedItemUiState
 
 fun ReviewAndImage.toReview(): FeedItemUiState {
     return FeedItemUiState(
         reviewImages        = this.images.map { BuildConfig.REVIEW_IMAGE_SERVER_URL + it.pictureUrl },
-        feedTopUiState = FeedTopUiState(userName            = this.review.userName ?: "",
-                                        profilePictureUrl   = BuildConfig.PROFILE_IMAGE_SERVER_URL + this.review.profilePicUrl,
-                                        restaurantName      = this.review.restaurantName ?: "",
-                                        rating              = this.review.rating ?: 0f,),
+        feedTopUiState = FeedTopUiState(
+            userName = this.review.userName ?: "",
+            profilePictureUrl = BuildConfig.PROFILE_IMAGE_SERVER_URL + this.review.profilePicUrl,
+            restaurantName = this.review.restaurantName ?: "",
+            rating = this.review.rating ?: 0f,
+        ),
         commentAmount       = this.review.commentAmount ?: 0,
         comments            = listOf(),
         feedBottomUiState = FeedBottomUiState(

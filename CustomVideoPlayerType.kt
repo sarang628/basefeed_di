@@ -6,7 +6,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import com.sarang.torang.LocalThumbImageLoader
 import com.sarang.torang.ShortItem
 import com.sarang.torang.ShortVideo
-import com.sarang.torang.compose.component.type.VideoPlayerType
+import com.sarang.torang.compose.feed.internal.components.type.VideoPlayerType
 
 fun CustomVideoPlayerType(onClick   : () -> Unit = {},
                           onPlayed  : () -> Unit = {}): VideoPlayerType = {
