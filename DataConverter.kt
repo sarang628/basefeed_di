@@ -8,7 +8,9 @@ import com.sarang.torang.data.ReviewAndImage
 
 fun ReviewAndImage.toReview(): FeedItemUiState {
     return FeedItemUiState(
-        reviewImages        = this.images.map { BuildConfig.REVIEW_IMAGE_SERVER_URL + it.pictureUrl },
+        reviewImages        = this.images.map {
+            Pair(it.pictureId, BuildConfig.REVIEW_IMAGE_SERVER_URL + it.pictureUrl)
+                                              },
         feedTopUiState = FeedTopUiState(
             userName = this.review.userName ?: "",
             profilePictureUrl = BuildConfig.PROFILE_IMAGE_SERVER_URL + this.review.profilePicUrl,
