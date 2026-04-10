@@ -6,8 +6,8 @@ import com.sarang.torang.compose.component.type.FeedImageLoaderData
 import com.sarang.torang.di.pinchzoom.PinchZoomState
 import com.sarang.torang.di.pinchzoom.pinchZoomImageLoader
 
+const val tag : String = "__CustomFeedImageLoader"
 fun CustomFeedImageLoader(
-    tag         : String                    = "__CustomFeedImageLoader",
     zoomState   : PinchZoomState?           = null,
     onZoomState : (PinchZoomState?)->Unit   = {},
     showLog     : Boolean                   = false,
